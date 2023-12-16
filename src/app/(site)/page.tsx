@@ -339,7 +339,7 @@ const HomePage = () => {
                     text-2xl
                 "
                   >
-                    ${card.price}
+                    ₹{card.price}
                   </span>
                   {+card.price > 0 ? (
                     <span className="dark:text-washed-purple-800 ml-1">
