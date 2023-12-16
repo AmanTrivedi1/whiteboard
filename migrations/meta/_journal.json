@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1702740207636,
+      "tag": "0000_nosy_nico_minoru",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1702742030792,
+      "tag": "0001_little_thunderball",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1702743074761,
+      "tag": "0002_glossy_invaders",
+      "breakpoints": true
+    }
+  ]
+}
