@@ -6,7 +6,7 @@ import React from 'react';
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
+  PopoverTrigger, 
 } from '@/components/ui/popover';
 
 interface EmojiPickerProps {
