@@ -54,6 +54,8 @@ interface DashboardSetupProps {
                             </label>
                             <Input placeholder='WorkspaceName' id="workspaceName" type="text">
                             </Input>
+                            <Input placeholder='WorkspaceName' id="workspaceName" type="text">
+                            </Input>
                             
                         </div>
                     </div>
