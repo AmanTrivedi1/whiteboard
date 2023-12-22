@@ -1,5 +1,5 @@
 'use server';
-// import { validate } from 'uuid';
+import { validate } from 'uuid';
 import { and, eq, ilike, notExists } from 'drizzle-orm';
 import { files, folders, users, workspaces } from '../../../migrations/schema';
 import db from './db';
@@ -35,3 +35,20 @@ export const createWorkspace = async (workspace: workspace) => {
       return { data: null, error: `Error` };
     }
   };
+
+  export const getFiles = async (folderId: string) => {
+    const isValid = validate(folderId);
+    if (!isValid) return { data: null, error: 'Error' };
+    try {
+      const results = (await db
+        .select()
+        .from(files)
+        .orderBy(files.createdAt)
+        .where(eq(files.folderId, folderId))) as File[] | [];
+      return { data: results, error: null };
+    } catch (error) {
+      console.log(error);
+      return { data: null, error: 'Error' };
+    }
+  };
+  

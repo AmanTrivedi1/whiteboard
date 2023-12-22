@@ -1,24 +1,24 @@
 'use client'
-
 import { AuthUser } from '@supabase/supabase-js';
 import React, { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import EmojiPicker from '../global/emoji-picker';
 import { Input } from '../ui/input';
 import { z } from 'zod';
-import { FieldValue, FieldValues, useForm } from 'react-hook-form';
+import {  useForm } from 'react-hook-form';
 import { CreateWorkspaceFormSchema } from '@/lib/types';
+import { Subscription } from '@/lib/supabase/supabase.types';
 
 interface DashboardSetupProps {
     user: AuthUser;
-    subscription: {} | null;
+    subscription: Subscription | null;
   }
   const DashboardSetup: React.FC<DashboardSetupProps> = ({
     subscription,
     user,
   }) => {
 
-    const [selectedEmoji, setSelectedEmoji] = useState('💼');
+    const [selectedEmoji, setSelectedEmoji] = useState('😺');
     const {
         register,
         handleSubmit,
@@ -52,15 +52,21 @@ interface DashboardSetupProps {
                             <label htmlFor='workspaceName' className='text-sm text-muted-foreground'>
                                 Name    
                             </label>
-                            <Input placeholder='WorkspaceName' id="workspaceName" type="text">
-                            </Input>
-                            <Input placeholder='WorkspaceName' id="workspaceName" type="text">
-                            </Input>
-                            
+                              <Input {...register("workspaceName" , {required:"Workspace name is required"})} disabled={isLoading} placeholder='WorkspaceName' id="workspaceName" type="text"/>
+                              <small className="text-red-600">{errors?.workspaceName?.message?.toString()}</small> 
+
                         </div>
                     </div>
+                    <div>
+                    <label htmlFor='logo' className='text-sm text-muted-foreground'>
+                                Workspace Logo
+                            </label>
+                              <Input 
+                              accept='image/*'
+                              {...register("logo" , {required:"Workspace name is required"})} disabled={isLoading ||  subscription?.status != 'active'} placeholder='WorkspaceName' id="logo" type="file"/>
+                              <small className="text-red-600">{errors?.logo?.message?.toString()}</small>
+                    </div>
                   </div>
-               
             </form>
         </CardContent>
       </Card>

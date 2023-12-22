@@ -4,6 +4,7 @@ import { twMerge } from 'tailwind-merge';
 import './globals.css'
 import db from '@/lib/supabase/db'
 import { ThemeProvider } from '@/lib/providers/next-theme-provider';
+import AppStateProvider from '@/lib/providers/state-provider';
 
 
 
@@ -24,10 +25,13 @@ export default function RootLayout({
     <html lang="en">
        <body className={twMerge('bg-background', inter.className)}>
           <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem>
-           {children}</ThemeProvider>
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem>
+              <AppStateProvider>
+                {children}
+               </AppStateProvider>
+           </ThemeProvider>
         </body>
     </html>
   )
