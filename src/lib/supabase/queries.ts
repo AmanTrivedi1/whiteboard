@@ -51,4 +51,3 @@ export const createWorkspace = async (workspace: workspace) => {
       return { data: null, error: 'Error' };
     }
   };
-  
