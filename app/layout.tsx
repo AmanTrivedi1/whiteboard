@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ConvexClientProvider>
+        <Toaster />
            {children}
         </ConvexClientProvider>
         </body>
