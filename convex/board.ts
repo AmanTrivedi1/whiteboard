@@ -90,10 +90,14 @@ export const update = mutation({
       throw new Error("Title cannot be longer than 60 characters")
     }
 
+
+    if (title.length < 3) {
+      throw new Error("Title cannot be less than 3 characters")
+    }
+
     const board = await ctx.db.patch(args.id, {
       title: args.title,
     });
-
     return board;
   },
 });

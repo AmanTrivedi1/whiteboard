@@ -76,8 +76,7 @@ export const BoardCard = ({
           <Actions
             id={id}
             title={title}
-            side="right"
-          >
+            side="right">
             <button
               className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity px-3 py-2 outline-none"
             >
