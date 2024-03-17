@@ -37,8 +37,8 @@ export const NewBoardButton = ({
       disabled={pending || disabled}
       onClick={onClick}
       className={cn(
-        "col-span-1 aspect-[100/127] bg-OwnPurple rounded-lg hover:opacity-90 flex flex-col items-center justify-center py-6",
-        (pending || disabled) && "opacity-75 hover:bg-blue-600 cursor-not-allowed"
+        "col-span-1 aspect-[100/127] bg-black/50 rounded-lg hover:opacity-90 flex flex-col items-center justify-center py-6",
+        (pending || disabled) && "opacity-75  cursor-not-allowed"
       )}
     >
       <div />
