@@ -7,9 +7,16 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "WriteIt",
-  description: "Whiteboard that let you write",
+  description: "The connected workspace where better, faster work happens.",
+  icons: {
+    icon: [
+      {
+        url: "/logo.svg",
+        href: "/logo.svg",
+      },
+    ],
+  },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{

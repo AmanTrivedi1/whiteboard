@@ -34,7 +34,7 @@ import {
             align={align}
             sideOffset={sideOffset}
             alignOffset={alignOffset}>
-            <p className="font-semibold capitalize">
+            <p className=" capitalize">
               {label}
             </p>
           </TooltipContent>
