@@ -26,7 +26,8 @@ export const ToolButton = ({
         disabled={isDisabled}
         onClick={onClick}
         size="icon"
-        variant={isActive ? "boardActive" : "board"}>
+        variant={isActive ? "boardActive" : "board"}
+      >
         <Icon />
       </Button>
     </Hint>
